@@ -38,6 +38,10 @@ class AddTaskFragment : Fragment() {
                 taskViewModel.insert(task)
                 findNavController().popBackStack()
             }
+
+        }
+        binding.ivBack.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 }
