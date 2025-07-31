@@ -96,7 +96,7 @@
             android:id="@+id/time_picker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:timePickerMode="spinner" />
+            android:timePickerMode="clock" />
     </LinearLayout>
 
     <!-- Today and Switch aligned left & right -->
