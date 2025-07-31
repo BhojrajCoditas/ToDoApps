@@ -21,8 +21,7 @@
             android:layout_height="24dp"
             android:layout_marginEnd="16dp"
             android:src="@drawable/left_arrow"
-            android:padding="4dp"
-             />
+            android:padding="4dp" />
 
         <TextView
             android:layout_width="0dp"
@@ -55,13 +54,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="24dp"
-        android:paddingLeft="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:gravity="center_vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
+            android:text="@string/name"
             android:textSize="16sp"
             android:layout_marginEnd="16dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
@@ -71,7 +71,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+             />
     </LinearLayout>
 
     <!-- Hour and TimePicker side by side -->
@@ -80,7 +81,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="24dp"
-        android:paddingLeft="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:gravity="center_vertical">
 
         <TextView
@@ -103,7 +105,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="24dp"
-        android:paddingLeft="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         android:gravity="center_vertical"
         android:weightSum="1">
 
@@ -118,7 +121,7 @@
             android:id="@+id/switch_today"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingRight="8dp"
+
             />
     </LinearLayout>
 
@@ -128,16 +131,18 @@
         android:layout_width="55mm"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_gravity="center"
         android:background="@drawable/rounded_black_button"
-        android:text="Done"
+        android:text="@string/done"
         android:textColor="#FFFFFF"
         android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="If you disable today, the task will be considered as tomorrow"
+        android:text="@string/if_you_disable_today_the_task_will_be_considered_as_tomorrow"
         android:textSize="13sp"
         android:textColor="#A9A9A9"
         android:layout_marginTop="8dp"

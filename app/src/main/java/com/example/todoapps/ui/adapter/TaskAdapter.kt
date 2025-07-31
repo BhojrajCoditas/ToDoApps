@@ -18,27 +18,30 @@ class TaskAdapter(
 
     inner class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val taskCheckBox: CheckBox = itemView.findViewById(R.id.cb_task)
+        private val taskName: TextView = itemView.findViewById(R.id.tv_task_name)
         private val taskTime: TextView = itemView.findViewById(R.id.tv_time)
 
         fun bind(task: Task) {
-            // Detach listener temporarily
             taskCheckBox.setOnCheckedChangeListener(null)
 
-            // Set task name and time
-            taskCheckBox.text = task.name
+            taskName.text = task.name
             taskTime.text = task.time
             taskCheckBox.isChecked = task.isCompleted
 
-            // Fade effect on both checkbox and time
-            val alphaValue = if (task.isCompleted) 0.5f else 1.0f
-            taskCheckBox.alpha = alphaValue
-            taskTime.alpha = alphaValue
+            // Apply strike-through and fade effect
+            val alpha = if (task.isCompleted) 0.5f else 1f
+            val strikeFlag = if (task.isCompleted) Paint.STRIKE_THRU_TEXT_FLAG else 0
 
-            // Reattach listener after setting checked state
+            taskName.paintFlags = strikeFlag
+            taskTime.paintFlags = strikeFlag
+            taskName.alpha = alpha
+            taskTime.alpha = alpha
+
             taskCheckBox.setOnCheckedChangeListener { _, isChecked ->
                 onTaskCheckedChange(task.copy(isCompleted = isChecked))
             }
         }
+
 
     }
 
