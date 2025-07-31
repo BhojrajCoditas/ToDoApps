@@ -2,40 +2,127 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:padding="5dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
 
+    <!-- Title -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Task"
         android:textSize="25sp"
+        android:paddingBottom="2dp"
+        android:paddingTop="2dp"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#CCCCCC"
+        android:layout_marginVertical="8dp" />
 
-    <EditText
-        android:id="@+id/et_task_name"
-        android:hint="Task Name"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp"/>
-
-    <TimePicker
-        android:id="@+id/time_picker"
+        android:text="Add a Task"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:paddingLeft="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"/>
+    <!-- Name and EditText side by side -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-         />
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        android:paddingLeft="16dp"
+        android:gravity="center_vertical">
 
-    <Switch
-        android:id="@+id/switch_today"
-        android:text="For Today"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="16sp"
+            android:layout_marginEnd="16dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
 
+        <EditText
+            android:id="@+id/et_task_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Enter task"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Hour and TimePicker side by side -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        android:paddingLeft="16dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hour"
+            android:textSize="16sp"
+            android:layout_marginEnd="16dp" android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
+
+        <TimePicker
+            android:id="@+id/time_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:timePickerMode="spinner" />
+    </LinearLayout>
+
+    <!-- Today and Switch aligned left & right -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        android:paddingLeft="16dp"
+        android:gravity="center_vertical"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Today"
+            android:textSize="16sp" android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="5dp"/>
+    </LinearLayout>
+
+    <!-- Done button -->
     <Button
         android:id="@+id/btn_done"
+        android:layout_width="55mm"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/rounded_black_button"
         android:text="Done"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="If you disable today, the task will be considered as tomorrow"
+        android:textSize="13sp"
+        android:textColor="#A9A9A9"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"/>
+
 </LinearLayout>
